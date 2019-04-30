@@ -1,0 +1,28 @@
+pragma solidity >=0.4.22 <0.6.0;
+
+contract junior_security_dev{
+    
+    string name;
+    uint age;
+    bool bachelor_degree;
+    bool master_degree;
+    uint test_mark_networking;
+    uint test_mark_os;
+    bool database_knowledge;
+    bool english_knowledge;
+    string[] previous_exp;
+    string[] prog_lang;
+    bool comunication_skils;
+    bool ccna_security_cert
+    
+}
+
+contract security_dev is junior_security_dev {
+    
+    bool private ceh_security_cert;
+    uint private test_mark_security;
+    bool private cloud_knowledge;
+    bool private social_engineering_knowledge;
+    bool private kali_linux_knowledge;
+    
+}
