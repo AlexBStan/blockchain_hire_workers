@@ -1,6 +1,6 @@
 pragma solidity >=0.4.22 <0.6.0;
 
-contract junior_security_dev{
+contract junior_security_dev {
     
     string name;
     uint age;
@@ -13,16 +13,81 @@ contract junior_security_dev{
     string[] previous_exp;
     string[] prog_lang;
     bool comunication_skils;
-    bool ccna_security_cert
+    bool ccna_security_cert;
+    contructor(string name, uint age, bool bachelor_degree, bool master_degree, uint test_mark_networking,uint test_mark_os
+               bool database_knowledge, bool english_knowledge, string[] previous_exp, string[] prog_lang, bool comunication_skils
+               bool ccna_security_cert) internal {
+                   this.name=name;
+                   this.age=age;
+                   this.bachelor_degree=bachelor_degree;
+                   this.master_degree=master_degree;
+                   this.test_mark_networking=test_mark_networking;
+                   this.test_mark_os=test_mark_os;
+                   this.database_knowledge=database_knowledge;
+                   this.english_knowledge=english_knowledge;
+                   this.previous_exp=previous_exp;
+                   this.prog_lang=prog_lang;
+                   this.comunication_skils=comunication_skils;
+                   this.ccna_security_cert=ccna_security_cert;
+                }
+                
+    function give_mark_networking(uint mark) public {
+        
+        assert(mark>0 && mark <=10);
+        test_mark_networking=mark;
+    }
     
+    function give_mark_os(uint mark) public {
+        
+        assert(mark>0 && mark <=10);
+        test_mark_os=mark;
+    }
+    
+    function minimum_requirement() public {
+        
+        if(test_mark_networking>=5 && test_mark_networking>=5 && english_knowledge==1 && comunication_skils==1 )
+          return 1;
+        else
+        { 
+           if(ccna_security_cert==1)
+             return 1;
+           else
+             return 0;
+        }
+        
+    }
+               
+               
+               
 }
 
 contract security_dev is junior_security_dev {
     
-    bool private ceh_security_cert;
+    bool private ceh_cert;
     uint private test_mark_security;
     bool private cloud_knowledge;
     bool private social_engineering_knowledge;
     bool private kali_linux_knowledge;
+    
+    function give_mark_security(uint mark) public {
+        
+        assert(mark>0 && mark <=10);
+        test_mark_security=mark;
+    }
+    
+        function minimum_requirement() public {
+        
+        if(test_mark_networking>=8 && test_mark_networking>=8 && english_knowledge==1 && comunication_skils==1 && database_knowledge==1 && cloud_knowledge==1 && previous_exp!=null)
+          return 1;
+        else
+        { 
+           if(ceh_cert==1)
+             return 1;
+           else
+             return 0;
+        }
+        
+    }
+    
     
 }
