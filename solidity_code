@@ -14,8 +14,8 @@ contract junior_security_dev {
     string[] prog_lang;
     bool comunication_skils;
     bool ccna_security_cert;
-    contructor(string name, uint age, bool bachelor_degree, bool master_degree, uint test_mark_networking,uint test_mark_os
-               bool database_knowledge, bool english_knowledge, string[] previous_exp, string[] prog_lang, bool comunication_skils
+    constructor(string memory name, uint age, bool bachelor_degree, bool master_degree, uint test_mark_networking, uint test_mark_os,
+               bool database_knowledge, bool english_knowledge, string[] memory previous_exp, string[] memory prog_lang, bool comunication_skils,
                bool ccna_security_cert) internal {
                    this.name=name;
                    this.age=age;
@@ -58,7 +58,6 @@ contract junior_security_dev {
     }
                
                
-               
 }
 
 contract security_dev is junior_security_dev {
@@ -77,7 +76,7 @@ contract security_dev is junior_security_dev {
     
         function minimum_requirement() public {
         
-        if(test_mark_networking>=8 && test_mark_networking>=8 && english_knowledge==1 && comunication_skils==1 && database_knowledge==1 && cloud_knowledge==1 && previous_exp!=null)
+        if(test_mark_networking>=8 && test_mark_networking>=8 && english_knowledge==1 && comunication_skils==1 && database_knowledge==1 && cloud_knowledge==1)
           return 1;
         else
         { 
