@@ -39,7 +39,7 @@ contract junior_security_dev {
     
     function give_mark_os(uint mark) public {
         
-        assert(mark>0 && mark <=10);
+        require(mark>0 && mark <=10);
         test_mark_os=mark;
     }
     
