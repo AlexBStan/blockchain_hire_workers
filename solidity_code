@@ -2,18 +2,19 @@ pragma solidity >=0.4.22 <0.6.0;
 
 contract junior_security_dev {
     
-    string name;
-    uint age;
-    bool bachelor_degree;
-    bool master_degree;
-    uint test_mark_networking;
-    uint test_mark_os;
-    bool database_knowledge;
-    bool english_knowledge;
-    string[] previous_exp;
-    string[] prog_lang;
-    bool comunication_skils;
-    bool ccna_security_cert;
+    mapping (bytes32 => uint) public markReceived;
+    string public name;
+    uint public age;
+    bool public bachelor_degree;
+    bool public master_degree;
+    uint public test_mark_networking;
+    uint public test_mark_os;
+    bool public database_knowledge;
+    bool public english_knowledge;
+    string[] public previous_exp;
+    string[] public prog_lang;
+    bool public comunication_skils;
+    bool public ccna_security_cert;
     constructor(string memory _name, uint _age, bool _bachelor_degree, bool _master_degree, uint _test_mark_networking, uint _test_mark_os,
                bool _database_knowledge, bool _english_knowledge, string[] memory _previous_exp, string[] memory _prog_lang, bool _comunication_skils,
                bool _ccna_security_cert) internal {
@@ -53,6 +54,12 @@ contract junior_security_dev {
        
         return OK;
     }
+    
+     function mark_recieved(bytes32 _name) public {
+        
+        markReceived[_name]=(test_mark_networking+test_mark_os)/2;
+        
+    }
         
  }
                
@@ -60,11 +67,11 @@ contract junior_security_dev {
 
 contract security_dev is junior_security_dev {
     
-    bool private ceh_cert;
-    uint private test_mark_security;
-    bool private cloud_knowledge;
-    bool private social_engineering_knowledge;
-    bool private kali_linux_knowledge;
+    bool public ceh_cert;
+    uint public test_mark_security;
+    bool public cloud_knowledge;
+    bool public social_engineering_knowledge;
+    bool public kali_linux_knowledge;
     
     function give_mark_security(uint mark) public {
         
